@@ -18,6 +18,9 @@
     </soap12:Header>
     <soap12:Body>
         <sos:{{action}} service="SOS" version="2.0.0">
+            {{#parameters}}
+            <sos:{{name}}>{{value}}</sos:{{name}}>
+            {{/parameters}}
             {{#temporalFilters}}
             <sos:temporalFilter>
                 <fes:During>
@@ -29,9 +32,9 @@
                 </fes:During>
             </sos:temporalFilter>
             {{/temporalFilters}}
-            {{#parameters}}
+            {{#additionalParameters}}
             <sos:{{name}}>{{value}}</sos:{{name}}>
-            {{/parameters}}
+            {{/additionalParameters}}
         </sos:{{action}}>
     </soap12:Body>
 </soap12:Envelope>
