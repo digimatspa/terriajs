@@ -3,7 +3,7 @@ var StringReplacePlugin = require("string-replace-webpack-plugin");
 var webpack = require('webpack');
 
 function configureWebpack(terriaJSBasePath, config, devMode, hot, MiniCssExtractPlugin, disableStyleLoader) {
-    const cesiumDir = path.dirname(require.resolve('terriajs-cesium/package.json'));
+    const cesiumDir = path.dirname(require.resolve('terriajs-cesium'));
 
     config.node = config.node || {};
 
@@ -24,9 +24,9 @@ function configureWebpack(terriaJSBasePath, config, devMode, hot, MiniCssExtract
         test: /\.js?$/,
         include: path.dirname(require.resolve('terriajs-cesium')),
         exclude: [
-            require.resolve('terriajs-cesium/Source/ThirdParty/zip'),
-            require.resolve('terriajs-cesium/Source/Core/buildModuleUrl'),
-            require.resolve('terriajs-cesium/Source/Core/TaskProcessor')
+            path.join(cesiumDir, 'Source/ThirdParty/zip'),
+            path.join(cesiumDir, 'Source/Core/buildModuleUrl'),
+            path.join(cesiumDir, 'Source/Core/TaskProcessor')
         ],
         loader: StringReplacePlugin.replace({
             replacements: [
@@ -122,19 +122,19 @@ function configureWebpack(terriaJSBasePath, config, devMode, hot, MiniCssExtract
 
     config.module.rules.push({
         test: /\.js$/,
-        include: path.resolve(path.dirname(require.resolve('terriajs-cesium/package.json')), 'Source'),
+        include: path.resolve(path.dirname(require.resolve('terriajs-cesium')), 'Source'),
         loader: require.resolve('./removeCesiumDebugPragmas')
     });
 
     // Don't let Cesium's `buildModuleUrl` see require - only the AMD version is relevant.
     config.module.rules.push({
-        test: require.resolve('terriajs-cesium/Source/Core/buildModuleUrl'),
+        test: path.join(require.resolve('terriajs-cesium'), 'Source/Core/buildModuleUrl'),
         loader: 'imports-loader?require=>false'
     });
 
     // Don't let Cesium's `crunch.js` see require - only the AMD version is relevant.
     config.module.rules.push({
-        test: require.resolve('terriajs-cesium/Source/ThirdParty/crunch'),
+        test: path.join(require.resolve('terriajs-cesium'), '/Source/ThirdParty/crunch'),
         loader: 'imports-loader?require=>false'
     });
 
