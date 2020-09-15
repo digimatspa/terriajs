@@ -38,10 +38,12 @@ const TimerSection = createReactClass({
 
   getCountdownDuration() {
     // How many seconds until our next update?
-    return Math.floor(
-      (this.props.item.polling.nextScheduledUpdateTime.getTime() -
-        new Date().getTime()) /
-        1000
+    return (
+      Math.floor(
+        (this.props.item.polling.nextScheduledUpdateTime.getTime() -
+          new Date().getTime()) /
+          1000
+      ) + 1
     );
   },
 
