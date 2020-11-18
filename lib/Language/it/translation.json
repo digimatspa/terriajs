@@ -174,8 +174,8 @@
     "latLon": "Lat / Lon "
   },
   "welcomeMessage": {
-    "title": "Geoportale 3D della <2>Regione Emilia-Romagna.</2>",
-    "WelcomeMessage": "Benvenuto! Accedi al catalogo dei dati regionali, carica dati nuovi da file o da URL, visualizza e analizza i dati 3D.",
+    "title": "Monitoraggio Parco Archeologico del <2>Colosseo.</2>",
+    "WelcomeMessage": "Benvenuto! Accedi al catalogo dei dati, carica dati nuovi da file o da URL, visualizza e analizza i dati 3D.",
     "WelcomeMessagePrimaryBtn": "Apri il catalogo",
     "WelcomeMessageSecondaryBtn": "Fai un giro",
     "WelcomeMessageDissmissText": "Non mostrare più"
