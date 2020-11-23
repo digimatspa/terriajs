@@ -1,6 +1,51 @@
 Change Log
 ==========
 
+### Next Release
+
+* Fixed a bug where the timeline would not update properly when the timeline panel was resized.
+
+### v7.11.15
+
+* Fixed a bug when clicking the expand button on a chart in feature info when the clicked feature was a polygon.
+
+### v7.11.14
+
+* Update CARTO Basemaps CDN URL and attribution.
+* Fixed issue with node 12 & 14 introduced in Cesium upgrade.
+
+### v7.11.13
+
+* Upgraded to Cesium v1.73.
+* Removed any references to `BingMapsApi` (now deprecated).
+
+### v7.11.12
+
+* Fixed a crash with GeoJsonCatalogItem when you set a `stroke-opacity` in `styles`.
+
+### v7.11.11
+
+* If `showIEMessage` is `true` in config.json, warn IE11 users that support is ending.
+
+### v7.11.10
+
+* Remove caching from TerriaJsonCatalogFunction requests.
+* Upgraded minimum node-sass version to one that has binaries for node v14.
+
+### v7.11.9
+
+* Update Geoscience Australia Topo basemap.
+* Remove caching from WPS requests.
+* Fix entity outline alpha value when de-selecting a feature.
+
+### v7.11.8
+
+* Upgraded to terriajs-cesium v1.71.3 which fixes a bug running gulp tasks on node v14.
+
+### v7.11.7
+
+* Add additional region mapping boundaries.
+
 ### v7.11.6
 
 * Rework the handling of point datasets on the anti-meridian when using LeafletJS.
