@@ -53,8 +53,8 @@ export const DataCatalogItem = createReactClass({
       !event.ctrlKey
     ) {
       // close modal window
-      this.props.viewState.explorerPanelIsVisible = false;
-      this.props.viewState.mobileView = null;
+      //this.props.viewState.explorerPanelIsVisible = false;
+      //this.props.viewState.mobileView = null;
       if (this.props.viewState.firstTimeAddingData) {
         this.props.viewState.featureInfoPanelIsVisible = true;
       }

@@ -34,14 +34,14 @@ const MappablePreview = createReactClass({
     if (defined(this.props.viewState.storyShown)) {
       this.props.viewState.storyShown = false;
     }
-    if (
+    /*if (
       this.props.previewed.isEnabled === true &&
       !event.shiftKey &&
       !event.ctrlKey
     ) {
       this.props.viewState.explorerPanelIsVisible = false;
       this.props.viewState.mobileView = null;
-    }
+    }*/
   },
 
   backToMap() {
